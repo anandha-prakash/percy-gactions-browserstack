@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "percy:run": "percy exec browserstack-cypress run --sync --headed --cf ./browserstack-config.json --no-wrap --local true",
-    "test:bstack": "browserstack-cypress run --sync --headed --cf ./browserstack-config.json --no-wrap"
+    "run:percy": "percy exec browserstack-cypress run --sync --headed --local true",
+    "run:in:bstack": "browserstack-cypress run --sync --headed"
   },
   "repository": {
     "type": "git",
