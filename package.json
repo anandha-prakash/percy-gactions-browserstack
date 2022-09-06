@@ -1,0 +1,26 @@
+{
+  "name": "percy-gactions-browserstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "percy:run": "percy exec browserstack-cypress run --sync --headed --cf ./browserstack-config.json --no-wrap --local true",
+    "test:bstack": "browserstack-cypress run --sync --headed --cf ./browserstack-config.json --no-wrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anandha-prakash/percy-gactions-browserstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anandha-prakash/percy-gactions-browserstack/issues"
+  },
+  "homepage": "https://github.com/anandha-prakash/percy-gactions-browserstack#readme",
+  "devDependencies": {
+    "@percy/cli": "^1.10.1",
+    "@percy/cypress": "^3.1.2",
+    "browserstack-cypress-cli": "^1.18.0",
+    "cypress": "^10.7.0"
+  }
+}
