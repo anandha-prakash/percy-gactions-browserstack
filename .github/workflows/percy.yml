@@ -24,5 +24,5 @@ jobs:
               BROWSERSTACK_ACCESS_KEY: ${{ secrets. BROWSERSTACK_ACCESS_KEY }}
           with:
               install: true
-              working-directory: cypress-tests
+              working-directory: .
               command: yarn percy:run --build-name "percy-demo/${{github.run_number}}" --local true --local-identifier "percy-demo-${{github.run_id}}-${{github.run_attempt}}"
