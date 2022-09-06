@@ -10,14 +10,12 @@ jobs:
       if: ${{ !contains(github.event.head_commit.message, '#skippercy') }}
       name: percy visual tests
       runs-on: ubuntu-latest
-      needs: get_vercel_url
       steps:
         - name: Checkout files
           uses: actions/checkout@v2
         - uses: actions/setup-node@v2
           with:
-            node-version: '14'
-        - name: Get target url
+            node-version: '16'
         - name: Run cypress <> percy tests
           uses: cypress-io/github-action@v2
           env:
@@ -26,5 +24,5 @@ jobs:
               BROWSERSTACK_ACCESS_KEY: ${{ secrets. BROWSERSTACK_ACCESS_KEY }}
           with:
               install: true
-              working-directory: cypress-tests
-              command: yarn percy:run --build-name "percy-demo/${{github.run_number}}" --local true --local-identifier "sa-percy-${{github.run_id}}-${{github.run_attempt}}"
+              working-directory: .
+              command: yarn percy:run --build-name "percy-demo/${{github.run_number}}" --local-identifier "percy-demo-${{github.run_id}}-${{github.run_attempt}}"
