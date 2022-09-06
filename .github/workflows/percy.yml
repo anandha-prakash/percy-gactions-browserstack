@@ -10,14 +10,12 @@ jobs:
       if: ${{ !contains(github.event.head_commit.message, '#skippercy') }}
       name: percy visual tests
       runs-on: ubuntu-latest
-      needs: get_vercel_url
       steps:
         - name: Checkout files
           uses: actions/checkout@v2
         - uses: actions/setup-node@v2
           with:
             node-version: '16'
-        - name: Get target url
         - name: Run cypress <> percy tests
           uses: cypress-io/github-action@v2
           env:
